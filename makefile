@@ -11,5 +11,10 @@ build:
 	mv $(PROJECT_NAME).exe ./build
 	cp -r ./bin/* ./build
 
+zip:
+	zip -r build build
 clean:
 	rm -rf ./build
+	@if ! [ -f ./build.zip]; then\
+		rm build.zip;\
+	fi
